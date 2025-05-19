@@ -1,30 +1,4 @@
-# from openvino.runtime import Core
-# import cv2
-# import numpy as np
-# import os
-# print("Current working directory:", os.getcwd())
 
-
-# # Initialize OpenVINO runtime
-# core = Core()
-
-# model = core.read_model(model="yolov8n_openvino_model/yolov8n.xml")
-# compiled_model = core.compile_model(model=model, device_name="CPU")
-
-# # Get input and output layers
-# input_layer = compiled_model.input(0)
-# output_layer = compiled_model.output(0)
-
-# # Load and preprocess image
-# image = cv2.imread("frameaj211_110.jpg")
-# input_image = cv2.resize(image, (640, 640))
-# input_image = input_image.transpose(2, 0, 1)[np.newaxis, ...] / 255.0  # NCHW format
-
-# # Run inference
-# results = compiled_model([input_image])[output_layer]
-# print(results)
-
-# Post-processing (custom YOLO decoding needed here depending on use case)
 import cv2
 import numpy as np
 from openvino.runtime import Core
